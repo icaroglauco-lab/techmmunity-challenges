@@ -20,22 +20,17 @@ export const getMoreUsedChar = (input:string) :string =>{
          map.set(value, 1);
    });
 
+   // Procedural most used char verification
    let mostUsedChar = "";
    let times = 0;
-   let iterator = map.entries();
-   let el;
 
-   while(map.size>0){
-      el = iterator.next();
-      console.log(el)
+   for(const el of map){ // Iteract over the map
+      if(el[1]>times){   // if the value is bigger than times var
+         mostUsedChar = el[0]; // set most used char until now
+         times = el[1] // update times var
+      }
    }
 
-   // return .reduce( (a, nextEntry) => {
-   //    if(nextEntry[1] > a[1]) 
-   //       return nextEntry;
-   //    else
-   //       return a;
-   // }, ['', 0] ) [0];
-
+   // Return most used char
    return mostUsedChar;
 }
