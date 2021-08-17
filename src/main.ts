@@ -1,4 +1,4 @@
-import App from './App.svelte'
+import App from './landing.svelte'
 
 const app = new App({
   target: document.getElementById('app')
